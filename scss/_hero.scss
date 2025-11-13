@@ -1,102 +1,140 @@
 .hero {
-  width: 100%;
-  padding-top: 10%;
-  padding-bottom: 10%;
+  background: #383638;
+  background: linear-gradient(
+    146deg,
+    rgba(56, 54, 56, 1) 14%,
+    rgba(11, 11, 11, 1) 55%
+  );
+  &-wrapper {
+    padding-top: 155px;
+    padding-bottom: 142px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-content {
+    width: 50%;
+    p:nth-of-type(1) {
+      font-family: "Poppins", sans-serif;
+      font-size: 64px;
+      font-weight: 700;
+      max-width: 450px;
+      color: white;
+    }
+    p:nth-of-type(2) {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: $color-sy;
+      margin-top: 15px;
+      margin-bottom: 47px;
+      text-align: justify;
+    }
+  }
+}
+
+.search-bar {
   display: flex;
   align-items: center;
-  background: linear-gradient(155.28deg, #383638 2.06%, #0b0b0b 33.08%);
-  font-family: "Poppins";
-  color: white;
-}
-
-.hero-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 40px;
-}
-
-.hero-title {
-  font-weight: 700;
-  font-size: 64px;
-  line-height: 125%;
-  margin-bottom: 20px;
-  max-width: 457px;
-}
-
-.hero-text {
-  font-size: 16px;
-  line-height: 125%;
-  margin-bottom: 30px;
-  max-width: 456px;
-}
-
-.hero-search {
-  display: flex;
-  align-items: center;
-  max-width: 450px;
-  width: 80%;
   background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 40px;
-}
+  border-radius: 15px;
+  width: 500px;
+  padding: 7px 15px;
+  &-input {
+    display: flex;
+    align-items: center;
+    .fa-magnifying-glass {
+      font-size: 20px;
+      color: #4c56d9;
+      margin-right: 10px;
+    }
+    input {
+      border: none;
+      outline: none;
+      font-size: 16px;
+      color: #333;
+      width: 100%;
 
-.hero-search__icon {
-  color: #3858d6;
-  font-size: 18px;
-  padding: 0 12px;
-}
-
-.hero-search__input {
-  flex: 1;
-  padding: 14px;
-  font-size: 16px;
-  color: #333;
-  border: none;
-  outline: none;
-}
-
-.hero-search__btn {
-  background: #3858d6;
-  color: #fff;
-  margin-right: 5px;
-  border-radius: 8px;
-  font-weight: 600;
-  padding: 10px 32px;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  transition: background 0.3s;
-  font-family: "Poppins";
-}
-
-.hero-search__btn:hover {
-  background: #2f47b5;
-}
-
-.hero-img {
-  display: flex;
-  justify-content: center;
-}
-
-.hero-img img {
-  width: 100%;
-  max-width: 500px;
-}
-
-@media (max-width: 768px) {
-  .hero-wrapper {
-    grid-template-columns: 1fr;
-    text-align: center;
+      &::placeholder {
+        color: #aaa;
+      }
+    }
   }
-  .hero-img {
-    margin-top: 30px;
+  &-btn {
+    margin-left: auto;
+    background: $color-th;
+    color: #fff;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 10px 20px;
+
+    &:hover {
+      background: #3a44b8;
+    }
   }
-  .hero-search {
-    margin: 0 auto 40px auto;
+}
+@media (max-width: 990px) {
+  .hero {
+    &-wrapper {
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: 40px;
+    }
+    &-content {
+      width: 100%;
+
+      p:nth-of-type(1) {
+        font-size: 48px;
+        max-width: 100%;
+      }
+      p:nth-of-type(2) {
+        font-size: 15px;
+        margin-bottom: 35px;
+      }
+    }
   }
-  .hero-title, .hero-text {
-    max-width: 100%;
+
+  .search-bar {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    &-content {
+      p:nth-of-type(1) {
+        font-size: 32px;
+      }
+      p:nth-of-type(2) {
+        font-size: 14px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  .search-bar {
+    flex-direction: column;
+    align-items: start;
+    padding: 10px;
+
+    &-input {
+      margin-bottom: 10px;
+
+      input {
+        font-size: 14px;
+      }
+    }
+
+    &-btn {
+      width: 100%;
+      font-size: 16px;
+      padding: 10px;
+    }
   }
 }

@@ -1,6 +1,12 @@
-@import "fonts";
+@import "variables";
 @import "global";
-@import "navbar";
+
+@import "header";
 @import "hero";
-@import "item-types";
-@import "product";
+@import "watches";
+@import "products";
+@import "about";
+@import "contact";
+@import "footer";
+
+@import "fonts";

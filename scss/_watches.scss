@@ -1,0 +1,54 @@
+.watches {
+  margin-top: 73px;
+  &-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  &-card {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    padding: 41px;
+    background: #f6f6f6;
+    border-radius: 22px;
+    &-img {
+      width: 100%;
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      h3 {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+      }
+      p {
+        color: $color-sy;
+        font-weight: 500;
+        font-family: "Inter", sans-serif;
+      }
+    }
+  }
+}
+
+
+
+@media (max-width:990px) {
+    .watches{
+        &-wrapper{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    
+}
+
+@media (max-width:600px) {
+    .watches{
+        &-wrapper{
+            grid-template-columns:1fr;
+        }
+    }
+    
+}

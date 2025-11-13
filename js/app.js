@@ -1,21 +1,35 @@
-const stars = document.querySelectorAll(".fa-star");
-let selectedRating = 0;
+const sidebarEl = document.querySelector(".navbar-lists");
+const toggleBtn = document.querySelector(".navbar-toggle");
 
-stars.forEach((star, index) => {
-  star.addEventListener("mouseover", () => {
-    stars.forEach((s, i) => {
-      s.classList.toggle("hovered", i <= index);
-    });
-  });
+function toggleSidebar() {
+  sidebarEl.classList.toggle("active");
 
-  star.addEventListener("mouseout", () => {
-    stars.forEach((s) => s.classList.remove("hovered"));
-  });
+  if (sidebarEl.classList.contains("active")) {
+    toggleBtn.classList.remove("fa-bars");
+    toggleBtn.classList.add("fa-xmark");
+  } else {
+    toggleBtn.classList.remove("fa-xmark");
+    toggleBtn.classList.add("fa-bars");
+  }
+}
 
-  star.addEventListener("click", () => {
-    selectedRating = index + 1;
-    stars.forEach((s, i) => {
-      s.classList.toggle("selected", i < selectedRating);
-    });
-  });
+$(".owl-carousel").owlCarousel({
+  loop: true,
+  margin: 10,
+  autoplay: true,
+  autoplayTimeout: 1000,
+  margin: 20,
+  nav: false,
+  dots: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    600: {
+      items: 1,
+    },
+    1000: {
+      items: 2,
+    },
+  },
 });

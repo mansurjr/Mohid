@@ -1,0 +1,59 @@
+.about {
+    margin-bottom: 135px;
+  &-carousel {
+    .item {
+      background: #f6f6f6;
+      padding: 30px;
+      border-radius: 22px;
+      margin-top: 55px;
+
+      &-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+
+      &-img {
+        width: 100%;
+        img {
+          width: 160px;
+          border-radius: 16px;
+          object-fit: cover;
+        }
+      }
+
+      &-content {
+        h3 {
+          font-family: "Inter", sans-serif;
+          font-size: 24px;
+          font-weight: 700;
+          color: $color-py;
+        }
+
+        p {
+          font-size: 15px;
+          font-family: "Inter", sans-serif;
+          color: $color-sy;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          line-height: 1.5;
+        }
+
+        .item-stars {
+          display: flex;
+          gap: 6px;
+
+          i {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .owl-dots {
+    display: flex !important;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
